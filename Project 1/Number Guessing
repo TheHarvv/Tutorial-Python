@@ -1,0 +1,48 @@
+#Imports modules into python
+import random
+import math
+
+##ADD A SECTION TO STOP DECIMALS
+
+#Player inputs
+#While loop checks bounds aren't equal
+while True:
+  lower = int(input("Enter lower bound: "))
+  upper = int(input("Enter upper bound: "))
+
+  if lower == upper:
+    print("\nBounds CANNOT be the same.\nPlease enter different values\n")
+  else:
+    break
+
+#Generates random number
+number = random.randint(lower, upper)
+print("\nYou've only ",
+     round(math.log(upper - lower + 1, 2)),
+     " chances to guess!\n")
+
+#Starts no of guesses
+count = 0
+
+#While loop
+while count < math.log(upper - lower + 1, 2):
+  count += 1
+
+  #Guess input
+  guess = int(input("Guess a number: "))
+
+#Guess test loop
+  if number == guess:
+    print("\nWell done! You did it in ", count, " try" if count == 1 else " tries!")
+    #Breaks the test loop
+    break
+  elif number > guess:
+    print("Too low\n")
+  elif number < guess:
+    print("Too high\n")
+
+#Checks if the player has run out of guesses
+##Currently not working it adds an extra guess
+if count >= math.log(upper - lower + 1, 2): 
+  print("The number is %d" % number)
+  print("Better luck next time!")
