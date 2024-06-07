@@ -1,18 +1,23 @@
-#This needs to be modified by me still
 
-
-#Imports modules into Python
 import random
+from collections import Counter
 
 #Asking to user to enter their name
 name = input("What is your name? ")
-print("Good Luck ", name)
+print("Good Luck ", name, "\n\nLets play Hangman! Guess a character: ")
 
 #Lists the possible words to be selected
 words = ['rainbow', 'computer', 'science']
-
-#Function chooses one random word from words
 word = random.choice(words)
+
+#If loop?
+
+playing = True
+letterguessed = ' '
+chances = len(word) + 2
+correct = 0
+flag = 0
+
 
 #Asks the user to input a guess
 print("Guess a character")
