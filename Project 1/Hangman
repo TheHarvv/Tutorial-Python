@@ -108,7 +108,8 @@ def   hangman_game(word):
                 break
 
         else:
-
+                  #ERROR AROUND HERE - CAUSING 1 LETTER CORRECTLY GUESSED
+                  # = WINNING THE GAME... NOT IDEAL...
             for i in range(len(word)):
                 if word[i].upper() == inp.upper():
                     word_display[i] = inp.upper()
